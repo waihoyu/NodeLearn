@@ -5,8 +5,6 @@ fs.readFile("./test.txt",function (err,data) {
 });
 
 // var fs1 = require
-
-
 var sum = 0
 
 for (var i = 0; i<= 100; i++){
