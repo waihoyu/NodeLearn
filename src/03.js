@@ -14,3 +14,5 @@ var server = http.createServer(function (request,response) {
 });
 server.listen(3000,"127.0.0.1");
 
+// reg.exec()
+
