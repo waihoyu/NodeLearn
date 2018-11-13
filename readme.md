@@ -58,3 +58,45 @@ Apache 天生有静态资源服务，但是NodeJS不行，NodeJS必须使用路�
             response.end("错误的频道号码");
         }
     })
+
+
+path.extname()
+url.parse()
+querystring.parse()
+
+
+
+
+##  自定义模块
+
+注意小细节：
+require("./test.js)
+这里的./坚决不能省略！   为什么不能省略，如果你省略了，表示读取node_modules文件夹中的内容了。
+
+require的js文件中如果有异步函数，将不会等待。
+
+结论，require的文件中如果有异步语句，此时nodejs仍然不会死等它结束，会返回执行主文件中的程序，如果文件读取完毕，执行回调函数。
+
+
+## 连续require
+
+
+
+
+##  循环引用
+
+如果A 引用B，B引用A会发生什么？
+
+nodejs很智能，自动抑制。
+
+
+作用域和暴露
+
+
+
+
+
+
+
+
+
