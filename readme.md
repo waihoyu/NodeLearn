@@ -81,8 +81,6 @@ require的js文件中如果有异步函数，将不会等待。
 ## 连续require
 
 
-
-
 ##  循环引用
 
 如果A 引用B，B引用A会发生什么？
@@ -90,10 +88,33 @@ require的js文件中如果有异步函数，将不会等待。
 nodejs很智能，自动抑制。
 
 
-作用域和暴露
+## 作用域和暴露
+
+js文件是天生隔离作用域的
+
+使用exports.xxx = 
 
 
 
+## 使用 module.export  暴露
+
+    
+    function People(name, sex, age) {
+        this.name =name;
+        this.sex = sex;
+        this.age = age;
+    }
+    
+    People.prototype.sayHello = function () {
+        console.log("你好我是" + this.name + ", 我今年" + this.age)
+    }
+    
+    
+    module.exports = People; //这个通常暴露构造函数  仅仅暴露一个的话
+    exports  // 这个通常暴露多个
+
+
+##  神奇的node_modules 文件夹
 
 
 
