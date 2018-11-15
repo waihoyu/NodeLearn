@@ -95,10 +95,8 @@ js文件是天生隔离作用域的
 使用exports.xxx = 
 
 
-
 ## 使用 module.export  暴露
 
-    
     function People(name, sex, age) {
         this.name =name;
         this.sex = sex;
@@ -117,7 +115,5 @@ js文件是天生隔离作用域的
 ##  神奇的node_modules 文件夹
 
 
-
-
-
+npm install solarLunar --save
 
