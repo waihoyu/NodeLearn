@@ -117,3 +117,6 @@ js文件是天生隔离作用域的
 
 npm install solarLunar --save
 
+
+
+## express 可以像php一样使用后台语言模板，此时最好用的模板引擎叫做ejs
