@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小小订餐表单</title>
+    <style type="text/css">
+        .box{
+            width: 800px;
+            height: 400px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            background: -webkit-linear-gradient(top,skyblue,white);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <h1>拉拉订餐</h1>
+    <p>
+        请输入手机号：
+    </p>
+    <p>
+        <input type="text" name="shoujihao">
+    </p>
+    <p>
+        吃什么
+    </p>
+    <p>
+        <input type="text" name="cai">
+    </p>
+    <p>
+        <input type="button" value="确认" id="btn"/>
+    </p>
+</div>
+<script src="jquery.min.js"></script>
+<script>
+    $("#btn").click(function () {
+        var shoujihao = $("input[name=shoujihao]").val()
+        var cai = $("input[name=cai]").val()
+        console.log(cai)
+        $.post("/baocun",{
+            shoujihao:shoujihao,
+            cai:cai
+        },function (data) {
+            if (data == 1){
+                alert("成功")
+            } else{
+                alert("失败")
+            }
+        })
+    })
+</script>
+</body>
+</html>

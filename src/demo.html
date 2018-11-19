@@ -28,17 +28,35 @@
             请输入手机号：
         </p>
         <p>
-            <input type="text">
+            <input type="text" name="shoujihao">
         </p>
         <p>
             吃什么
         </p>
         <p>
-            <input type="text">
+            <input type="text" name="cai">
         </p>
         <p>
-            <input type="button" value="确认"/>
+            <input type="button" value="确认" id="btn"/>
         </p>
     </div>
+    <script src="./public/jquery.min.js"></script>
+    <script>
+        $("#btn").click(function () {
+            var shoujihao = $("input[name=shoujihao]").val()
+            var cai = $("input[name=cai]").val()
+
+            $.post("/baocun"),{
+                shoujihao:shoujihao,
+                cai:cai
+            }
+        },function (data) {
+            if (data == 1){
+                alert("成功")
+            } else{
+                alert("失败")
+            }
+        })
+    </script>
 </body>
 </html>
