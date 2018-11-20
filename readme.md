@@ -120,3 +120,13 @@ npm install solarLunar --save
 
 
 ## express 可以像php一样使用后台语言模板，此时最好用的模板引擎叫做ejs
+
+
+
+## 数据库的安装 
+
+ 安装依赖
+   npm install --save mongodb
+
+
+
