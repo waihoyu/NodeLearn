@@ -8,13 +8,17 @@
     <title>全部订单</title>
 </head>
 <body>
-<%
- for (var i = 0;i < quanbushoujihao.length;i++){
- %>
-<li><%= quanbushoujihao[i] %></li>
-<%
-}
-%>
+    <%
+        for (var i = 0;i < quanbushoujihao.length;i++){
+    %>
+        <li >
+            <a href="/dingdan/<%= quanbushoujihao[i] %>">
+                <%= quanbushoujihao[i] %>
+            </a>
+        </li>
+    <%
+         }
+    %>
 
 </body>
 </html>
