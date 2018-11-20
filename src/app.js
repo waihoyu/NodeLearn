@@ -2,36 +2,19 @@
 
 var express = require("express")
 var  app = express()
-var formidable = require("formidable")
-var fs = require("fs")
+var mainctril = require("./controllers/mainctrl")
 
-app.get("/",function (req,res) {
-
-    res.send("adfadsf")
-})
+// app.get("/",function (req,res) {
+// //     res.send("adfadsf")
+// // })
 
 //将public文件夹静态化出来
-
-
-
-app.post("/baocun",function (req,res) {
-    var form = new formidable.IncomingForm()
-    form.parse(req, function (err,fields,files) {
-        fs.appendFile("./public/dingcan.txt",JSON.stringify(fields),function (err) {
-            if (err){
-                res.send("-1")
-            }else
-            {
-                res.send("1")
-            }
-
-        })
-        console.log(fields);
-    })
+app.set("view enginie","ejs")
+app.get("/",mainctril.showIndex)
+app.post("/baocun",mainctril.baocun)
     // console.log("有人提交表单了");
     // res.send("1")
-
-})
+app.get("/showAlldingcan",mainctril.showAlldingcan)
 app.use(express.static("public"))
 app.listen(3000)
 
